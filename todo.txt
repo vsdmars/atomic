@@ -1,6 +1,11 @@
-
 get:
 ch <- data , take advantage of fast path from the sender side
 https://github.com/golang/go/blob/master/src/runtime/chan.go#L159
-
 not the receiver side since that code uses atomic.Load()
+
+Notes:
+https://golang.org/ref/mem
+Reads and writes of values larger than a single machine word behave
+as multiple machine-word-sized operations in an unspecified order.
+Alas, we still can not count on write/read from single word value
+is atomic at user space code due to underneath hardware differences.
