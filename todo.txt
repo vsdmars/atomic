@@ -1,4 +1,6 @@
 
 get:
-ch <- data , take advantage of fast path
+ch <- data , take advantage of fast path from the sender side
 https://github.com/golang/go/blob/master/src/runtime/chan.go#L159
+
+not the receiver side since that code uses atomic.Load()
