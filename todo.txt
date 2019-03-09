@@ -1,0 +1,4 @@
+
+get:
+ch <- data , take advantage of fast path
+https://github.com/golang/go/blob/master/src/runtime/chan.go#L159
